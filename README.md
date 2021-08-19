@@ -22,6 +22,8 @@
 
 7. Main Page Contains A Link to the Search Page , and the URL in the browsers address is /search
 
+9. Active state of books is shown on the LibrosMainpage.js and LibrosSearchpage.js
+
 
 ## JavaScript Changes Made in /src/App.js 
 
@@ -74,7 +76,7 @@ Changed Search Page from a state variable to an URL:localhost:3000/search  to al
 1. Wrapped getAll in async function 
    To allow books to be updated directly without refreshing the page
 
-2. Updated getall with await in terms of BOOKsAPI.update()  since its an asynchro 
+2. Updated getall with await in terms of BOOKsAPI.update()  since its an async function to await response from API.
 
 3. Added dynamic active state - to 'Read', 'Currently Read' , 'None' 
 When user clicks on the button 
