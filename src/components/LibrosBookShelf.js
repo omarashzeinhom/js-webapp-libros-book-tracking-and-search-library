@@ -18,9 +18,7 @@ function LibrosBookShelf(props) {
 
 
   const { updateLibrosShelf, books, shelf } = props;
-  /*
-  * Const added here incase the image doesnt exist for the thumbnail
-  */
+ 
   
   return (
    <section className="libros-book-shelf">
