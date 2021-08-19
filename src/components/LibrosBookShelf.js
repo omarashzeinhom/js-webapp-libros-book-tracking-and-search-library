@@ -14,9 +14,10 @@ import PropTypes from 'prop-types';
   *  ----------------------------
 */
 
+
 function LibrosBookShelf(props) {
 
-
+// props Librosshelf , books , and shelf
   const { updateLibrosShelf, books, shelf } = props;
  
   
@@ -27,8 +28,11 @@ function LibrosBookShelf(props) {
          {props.title}
        </h2>
        </header>
-       
-
+        {/*
+        ul added here to apply to standards as well
+        as to remove numbering from the LibrosSearchPage 
+        As well book is mapped to shelf and passed through book.id 
+        For Comparision*/}
       <ul className="libros-books-area-container">
       { books.filter((book) => book.shelf === shelf).map(
                   (book) => (
@@ -45,6 +49,8 @@ function LibrosBookShelf(props) {
    </section>
   )
 }
+
+
 
 LibrosBookShelf.propTypes = {
   title: PropTypes.oneOf([
@@ -65,6 +71,8 @@ LibrosBookShelf.propTypes = {
 export default LibrosBookShelf;
 
 
+
+/*Initial BookShelf*/
 
 /*
                 *OnChangeMethod to

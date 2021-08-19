@@ -1,12 +1,20 @@
 
 
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 
+/*
+    * LibrosSearch Data is resposnible for the users searchedQuery
+    *  & onChange this event , updateSearchedBooks
+    *
+    * 
+*/
 
-class LibrosSearchData extends Component{
+
+
+class LibrosSearchData extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -23,21 +31,21 @@ class LibrosSearchData extends Component{
         return (
             <form>
                 <div className="libros-search-data">
-                
-            <Link className="close-search" to="/">Close
-            </Link>
-            
-                <input
-                    type="text"
-                    placeholder="Search by title or author"
-                    value={this.state.query}
-                    className="libros-search-data-input"
-                    onChange={(event) => this.updatedSearchQuery(event.target.value)
-                    }
-                />
-        </div>
+
+                    <Link className="close-search" to="/">Close
+                    </Link>
+
+                    <input
+                        type="text"
+                        placeholder="Search by title or author"
+                        value={this.state.query}
+                        className="libros-search-data-input"
+                        onChange={(event) => this.updatedSearchQuery(event.target.value)
+                        }
+                    />
+                </div>
             </form>
-            
+
 
         )
     }
@@ -45,7 +53,7 @@ class LibrosSearchData extends Component{
 
 
 LibrosSearchData.propTypes = {
-    updateLibrosBooksSearched : PropTypes.func.isRequired
+    updateLibrosBooksSearched: PropTypes.func.isRequired
 }
 
 

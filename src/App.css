@@ -33,7 +33,6 @@ form {
 
 li {
     background-color: white;
-
 }
 
 /** Typeography General **/
@@ -73,10 +72,11 @@ h3 {
 p {
     font-size: 2.0vw;
     color: black;
-    position: relative;
-    text-align: center;
+    position: flex;
+    text-align: left;
     float: left;
-    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-top: 100px;
     margin-right: 75px;
     font-family: 'Clicker Script', cursive;
 }
@@ -139,9 +139,13 @@ SearchPage.js */
 
 /** LibrosSearchData.js**/
 
-.libros-search-data-form {}
+.libros-search-data-form {
+    align-items: center;
+}
 
-.libros-search-data- {}
+.libros-search-data- {
+    align-items: center;
+}
 
 .libros-search-data-input {
     position: fixed;
@@ -266,7 +270,9 @@ SearchPage.js */
 
 /** LibrosBooks **/
 
-.libros-books {}
+.libros-books {
+    background: transparent;
+}
 
 .book-cover {
     bottom: 10px;
@@ -279,7 +285,16 @@ SearchPage.js */
     float: right;
 }
 
-.libros-interactive-books {}
+.libros-interactive-books {
+    bottom: 10px;
+    width: 90%;
+    height: 250px;
+    border-radius: 10%;
+    border-spacing: 1.5vw;
+    background-repeat: no-repeat;
+    position: relative;
+    float: right;
+}
 
 /* --- State Rules --- 
 */

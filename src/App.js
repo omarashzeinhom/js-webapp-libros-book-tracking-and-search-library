@@ -28,11 +28,11 @@ class BooksApp extends React.Component {
     super(props);
     this.state = {
       /*
-      *                 --> List of Books -> /App.js
-      * State Structure --> Query(Search) -> /components/SearchPage       
-      *                 --> List of Books Searched -> /components/SearchPage 
+      *                 --> List of Books -> ./App.js
+      * State Structure --> Query(Search) -> /components/LibrosSearchPage       
+      *                 --> List of Books Searched -> /components/LibrosSearchPage 
       */
-      //books:[] Array is added to the state {}
+      //booksSearched:[] and BooksOnDisplay are added as Array's  to the state {}
 
       booksSearched: [],
       booksonDisplay: [],
@@ -41,7 +41,7 @@ class BooksApp extends React.Component {
 
 
 
-
+  //get all books using an async function with await response to display books
 
   async componentDidMount() {
     const books = await BooksAPI.getAll()
@@ -57,7 +57,7 @@ class BooksApp extends React.Component {
   * Display Empty array booksSearched instead 
   * Of Giving TypeError
   */
-  
+
 
   updateLibrosBooksSearched = (query) => {
     let LibrosSearchedShelf
@@ -97,32 +97,31 @@ class BooksApp extends React.Component {
   }
 
 
+  /*  
+       *
+       *  librosSyncedShelf is used to filter and compare bookonDisplay with book.id
+       *  then through LibrosBookShelf.js
+       * 
+   */
+
+
   librosSyncedShelf = (book) => {
-    let updatedMatchedShelf = this.state.booksonDisplay.filter(bookonDisplay => 
+    let updatedMatchedShelf = this.state.booksonDisplay.filter(bookonDisplay =>
       book.id === bookonDisplay.id
     )
     return updatedMatchedShelf.length ? updatedMatchedShelf[0].shelf : undefined
   }
 
 
-
-
-
-
-
-
   /*
     * Rendering Components <SearchPage/>
-    * <LibrosBookShelf>, & <LibrosMainPage/>
     * With exact path added to <Route> 
-    * to let user go to URL localhost:3000/search
-    * Book mark it and return to / when being at
-    * the home page or at the component 
-    * BookListed.js
+    * to let user Book mark URL 
   */
 
 
   //exact path added here to make sure its directing to the exact directories
+
 
   render() {
     const { booksonDisplay, booksSearched } = this.state;
@@ -131,7 +130,6 @@ class BooksApp extends React.Component {
     * Route Structure Hiearchy
     * <App/>
     *   <LibrosMainPage/>
-    *     <LibrosBookShelf/>
     *       <SearchPage/>
     *         
     * 
@@ -145,6 +143,9 @@ class BooksApp extends React.Component {
           />
         )}>
         </Route>
+        {/*
+        Passed booksSearched here and is updated aswell 
+        */}
         <Route exact path="/search" render={() => (
           <LibrosSearchPage
             books={booksSearched}

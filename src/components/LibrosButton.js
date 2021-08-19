@@ -2,6 +2,18 @@ import React from 'react'
 import PropTypes from 'prop-types'
 //import LibrosBookShelf from './LibrosBookShelf';
 
+/*
+*   LibrosButton is responsible for passing the props
+*   On the shelfs classname and the currently used shelf
+*   it also controls the active state where books are 
+*   Shown on the button what current active state  they are
+*   In 'Currently Reading',
+*        'Want To Read',
+*        'Read',
+*        'None'
+*
+*/
+
 
 function LibrosButton(props){
     const { namedShelf , shelf , book , availableShelf, updateLibrosShelf } = props;
@@ -18,6 +30,7 @@ function LibrosButton(props){
             </button>
         )
 }
+
 
 LibrosButton.propTypes = {
     namedShelf: PropTypes.oneOf([

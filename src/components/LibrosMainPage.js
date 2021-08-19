@@ -10,7 +10,7 @@ import LibrosBookShelf from './LibrosBookShelf';
 /* 
   * -------------------------------
   * LibrosMainPage.js Is Just a functional Component file
-  * For Listing Books in the website as a component
+  * For Listing Books in the website as a functional component <LibrosBookShelf/>
   * Instead of Using the Code in app and updates LibrosBookShelf Values aswell.
   *  ----------------------------
 */
