@@ -11,6 +11,9 @@ import LibrosButton from './LibrosButton';
 
 function LibrosBooks(props) {
     const { updateLibrosShelf, book } = props;
+  /*
+  * Const added here incase the image doesnt exist for the thumbnail
+  */
     const shownThumbnails = props.book.imageLinks ?
         props.book.imageLinks.thumbnail : ''
 
