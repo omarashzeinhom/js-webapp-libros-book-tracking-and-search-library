@@ -57,9 +57,13 @@ Changed Search Page from a state variable to an URL:localhost:3000/search  to al
 
 2. Changed Font to Clicker Script & sizes were set to vw for website to be repsonsive
 
-3. Changed bookcover radius to be a circle at 25% 
+3. Changed bookcover radius to be a little more rounded
    
-4. 
+4. Changed Active State 
+   
+5. Added Responsive elements of css vw for text , width = 100% and so on
+   
+6. Active state is recorded as JS 1st then the animation is just displayed in css and the active state is updated utilizing functional components
 
 ##### HTML5 Changes Done in /public/index.html/
 
